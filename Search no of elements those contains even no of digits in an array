@@ -1,0 +1,40 @@
+import java.util.*;
+public class SearchingElement {
+
+//  ---> Searching the number of elements those consists even number of digits from the array
+
+    static int numberofdigits(int num){
+        int c=0;
+        if (num<0){
+            num=num*(-1);
+        }
+        while (num>0){
+            c++;
+            num=num/10;
+        }
+        return c;
+    }
+    static boolean even(int n){
+        int d= numberofdigits(n);
+        return ((d%2)==0);
+    }
+    static int noofdigits(int[] arr){
+        int count=0;
+        for (int i : arr) {
+            if(even(i)){
+                count++;
+            }
+        }
+
+        return count;
+    }
+
+    public static void main(String[] args) {
+      int[] arr = {5,10,3,23,12,4};
+      System.out.println(Arrays.toString(arr));
+        System.out.println(noofdigits(arr));
+    }
+}
+
+
+
